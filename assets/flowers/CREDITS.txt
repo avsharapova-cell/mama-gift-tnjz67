@@ -1,0 +1,35 @@
+Цветочные иллюстрации (прозрачные вырезки из ботанических гравюр и рисунков XVIII–XIX вв.)
+Источник: Cleveland Museum of Art, Open Access (лицензия CC0 — свободное использование): https://openaccess-api.clevelandart.org/
+
+bouquet.webp  <-  Collection of Flowers and Fruits Painted after Nature:  Bouquet of Foxglove, Clematis, Pansy, Peony, Poppy, and Yellow Day Lily | Louis Charles Ruotte (French, 1754–1806) | 1951.419 | CC0
+passion.webp  <-  Choix des plus belles fleurs...plus beaux fruits:  Passiflore ailee | Henri Joseph Redouté (French, 1766–1853) | 1955.474 | CC0
+rose-pink.webp  <-  Pasture Rose (Rosa Carolina Corymbosa) | Pierre-Joseph Redouté (French, 1759–1840) | 1959.15 | CC0
+moss.webp  <-  Moss Rose | Henri Joseph Redouté (French, 1766–1853) | 1943.141 | CC0
+crimson.webp  <-  Provence or French Rose | Henri Joseph Redouté (French, 1766–1853) | 1943.139 | CC0
+pompon.webp  <-  Pompon Rose | Pierre-Joseph Redouté (French, 1759–1840) | 1943.142 | CC0
+peony.webp  <-  Agatha Rose (Rosa Gallica Agatha) | Henri Joseph Redouté (French, 1766–1853) | 1959.20 | CC0
+amaryllis.webp  <-  Les Liliacées:  Amaryllis Lutes | Henri Joseph Redouté (French, 1766–1853) | 1955.322 | CC0
+crocus.webp  <-  Les Liliacées:  Crocus Sativus | Henri Joseph Redouté (French, 1766–1853) | 1955.323 | CC0
+hyacinth.webp  <-  The Botanical Magazine or Flower Garden Displayed:  Garden Hyacinth | Thomas Curtis (British, 1846–1920) | 1955.143 | CC0
+wild1.webp  <-  Les Roses:  Rosa Lucida | Henri Joseph Redouté (French, 1766–1853) | 1965.290 | CC0
+wild2.webp  <-  Les Roses:  Rosa Hudsoniana Salicifolia | Pierre-Joseph Redouté (French, 1759–1840) | 1965.292 | CC0
+wild3.webp  <-  Cabbage Rose (Rosa Centifolia Simplex) | Pierre-Joseph Redouté (French, 1759–1840) | 1959.14 | CC0
+cabbage.webp  <-  Les Roses:  Rosa Gallica | Pierre-Joseph Redouté (French, 1759–1840) | 1955.471 | CC0
+darkrose.webp  <-  Les Roses:  Rosa indica | Henri Joseph Redouté (French, 1766–1853) | 1955.468 | CC0
+sprig1.webp  <-  Les Roses:  Rosa cinnamomea | Henri Joseph Redouté (French, 1766–1853) | 1955.472 | CC0
+sprig2.webp  <-  Les Roses:  Rosa indica | Henri Joseph Redouté (French, 1766–1853) | 1955.473 | CC0
+white.webp  <-  Brier Bush Rose or Dog Rose (Rosa Leucantha) | Pierre-Joseph Redouté (French, 1759–1840) | 1959.17 | CC0
+white2.webp  <-  Les Roses:  Rosa Candolleana Elegans | Henri Joseph Redouté (French, 1766–1853) | 1965.295 | CC0
+pale.webp  <-  The Roses: China or Bengal Rose | Henri Joseph Redouté (French, 1766–1853) | 1943.138 | CC0
+leaf.webp  <-  Les Roses:  Rosa villosa, pomifera | Henri Joseph Redouté (French, 1766–1853) | 1955.470 | CC0
+delicate.webp  <-  Brier Bush Rose or Dog Rose (Rosa Sepium Rosea) | Pierre-Joseph Redouté (French, 1759–1840) | 1959.18 | CC0
+
+Фото-цветы (photo-*.webp) — вырезки с PNGimg.com (для личного некоммерческого использования, условия: https://pngimg.com/license),
+подготовлены ранее для первой версии альбома:
+photo-daisies <- https://pngimg.com/uploads/camomile/camomile_PNG677.png
+photo-daisy   <- https://pngimg.com/uploads/camomile/camomile_PNG678.png
+photo-tulip   <- https://pngimg.com/uploads/tulip/tulip_PNG9026.png
+photo-tulip-red <- https://pngimg.com/uploads/tulip/tulip_PNG9025.png
+Лента-скотч (textures/masking-tape.webp) — фрагмент Cardboard Set 001, ambientCG, CC0.
+
+Торт нарисован вручную (SVG) и украшен цветами из этой папки; огонь свечей анимирован в браузере.

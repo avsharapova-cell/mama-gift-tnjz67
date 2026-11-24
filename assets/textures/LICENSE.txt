@@ -1,0 +1,4 @@
+Текстуры бумаги и картона (paper-fine, crumple, kraft, cardboard) —
+ambientCG.com: Paper001, Paper003, Paper006, Cardboard002 (1K-JPG, цветовые карты).
+Лицензия: Creative Commons CC0 1.0 (свободное использование, в том числе в личных проектах).
+Источник: https://ambientcg.com/
