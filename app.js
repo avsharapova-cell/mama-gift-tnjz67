@@ -10,7 +10,13 @@
   /* ---------- Масштаб: сцена 1920×1080 вписывается в любой экран ---------- */
   function stageScale() { return Math.min(window.innerWidth / 1920, window.innerHeight / 1080); }
   function fit() { stage.style.transform = 'translate(-50%,-50%) scale(' + stageScale() + ')'; }
-  window.addEventListener('resize', fit); fit();
+  window.addEventListener('resize', fit); window.addEventListener('orientationchange', function () { setTimeout(fit, 200); }); fit();
+  /* телефон: просим повернуть горизонтально; тач-режим */
+  var isTouch = window.matchMedia && matchMedia('(hover:none)').matches;
+  if (isTouch) { document.documentElement.classList.add('touch'); $$('.hint,p').forEach(function (e) { if (e.children.length === 0 && e.textContent.indexOf('мышкой') > -1) e.textContent = e.textContent.replace('мышкой', 'пальцем').replace('по клику они', 'по нажатию они'); }); }
+  var rotEl = document.getElementById('rotate');
+  function checkRot() { if (rotEl) rotEl.hidden = !(window.innerHeight > window.innerWidth && window.innerWidth < 1000); }
+  window.addEventListener('resize', checkRot); window.addEventListener('orientationchange', function () { setTimeout(checkRot, 200); }); checkRot();
   function toStage(cx, cy) { var r = stage.getBoundingClientRect(), s = stageScale(); return [(cx - r.left) / s, (cy - r.top) / s]; }
 
   /* ---------- Живопись: мазки кисти на canvas (щетина, сухая кисть) ---------- */
@@ -699,6 +705,7 @@
     if (document.fullscreenElement === clip) { document.exitFullscreen(); return; }
     var f = clip.requestFullscreen || clip.webkitRequestFullscreen;
     if (f) { var pr = f.call(clip); if (pr && pr.catch) pr.catch(function () {}); }
+    else if (clip.webkitEnterFullscreen) { try { clip.webkitEnterFullscreen(); } catch (x) {} }
   }
   $('#clip-fs').addEventListener('click', clipFs);
   $('#song-title').textContent = G.songTitle || 'Песня для тебя';
@@ -866,9 +873,15 @@
   }
   coverEnv.addEventListener('click', openCover);
   $('#open-btn').addEventListener('click', openCover);
+  var fsOk = !!(document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen);
+  if (!fsOk) $('#fsb').hidden = true;
   function toggleFs() {
     var d = document.documentElement;
-    if (!document.fullscreenElement) { (d.requestFullscreen || function () {}).call(d); } else document.exitFullscreen();
+    if (!document.fullscreenElement) {
+      var f = d.requestFullscreen || d.webkitRequestFullscreen, pr = f && f.call(d);
+      var lock = function () { try { screen.orientation.lock('landscape').catch(function () {}); } catch (x) {} };
+      if (pr && pr.then) pr.then(lock).catch(function () {}); else lock();
+    } else document.exitFullscreen();
   }
   $('#fsb').addEventListener('click', toggleFs);
   $('#brand').addEventListener('click', function () { go(0); });
@@ -1106,6 +1119,14 @@
     $('#bgm-open').addEventListener('click', function (e) { e.stopPropagation(); bgList(lst.hidden); });
     document.addEventListener('click', function (e) { if (!lst.hidden && !e.target.closest('#bgm')) bgList(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lst.hidden) bgList(false); });
+    /* компактный плеер: раскрывается при наведении (ПК) или нажатии на ноту (телефон) */
+    var bgmEl = $('#bgm');
+    function bgEx(on) { bgmEl.classList.toggle('ex', on); }
+    bgmEl.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') bgEx(true); });
+    bgmEl.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse' && lst.hidden && !bgmEl.contains(document.activeElement && document.activeElement.type === 'range' ? document.activeElement : null)) bgEx(false); });
+    $('.bgm-note', bgmEl).addEventListener('click', function () { bgEx(!bgmEl.classList.contains('ex')); });
+    bgmEl.addEventListener('focusin', function () { bgEx(true); });
+    document.addEventListener('pointerdown', function (e) { if (!e.target.closest('#bgm') && bgmEl.classList.contains('ex')) { bgEx(false); if (!lst.hidden) bgList(false); } });
     bgSet(0); bgIcon();
     bgm.addEventListener('play', bgIcon); bgm.addEventListener('pause', bgIcon);
     bgm.addEventListener('ended', function () { bgSet(bgi + 1); bgPlay(); });

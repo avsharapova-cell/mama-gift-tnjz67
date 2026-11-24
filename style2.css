@@ -406,3 +406,31 @@
 .clip-cap{position:absolute;left:0;right:0;top:812px;margin:0;text-align:center;font-family:var(--hand);font-size:42px;color:var(--plum)}
 .clip-btns{position:absolute;left:0;right:0;top:895px;display:flex;justify-content:center;gap:22px}
 .clip-btns .btn{height:68px;font-size:30px;padding:0 34px}
+
+
+/* ===== Плеер: компактный (⏮ ▶ ⏭ + громкость), раскрывается при наведении/нажатии ===== */
+.bgm-note{cursor:pointer;padding:0 4px}
+#bgm:not(.ex):not(.open) #bgm-open,
+#bgm:not(.ex):not(.open) #bgm-loop,
+#bgm:not(.ex):not(.open) .bgm-time,
+#bgm:not(.ex):not(.open) #bgm-seek{display:none!important}
+#bgm:not(.ex):not(.open){padding:0 14px 0 10px;gap:4px;opacity:.92}
+#bgm:not(.ex):not(.open) input#bgm-vol{width:64px;margin-left:4px}
+#bgm.ex,#bgm.open{opacity:1}
+
+/* ===== Телефон ===== */
+#rotate{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#f7e8da;text-align:center;padding:24px}
+#rotate[hidden]{display:none!important}
+.rot-card{max-width:340px;font-family:var(--hand);color:var(--plum)}
+.rot-ic{font-size:72px;animation:rotHint 2.4s ease-in-out infinite}
+.rot-card p{font-size:28px;margin:10px 0 8px}
+.rot-card small{display:block;font-family:var(--serif);font-size:16px;color:#7d4f60;line-height:1.4}
+@keyframes rotHint{0%,30%{transform:rotate(0)}60%,100%{transform:rotate(-90deg)}}
+html,body{touch-action:manipulation}
+html.touch #stage button{-webkit-tap-highlight-color:transparent}
+html.touch #bgm{height:58px!important}
+html.touch #bgm button{width:44px;height:44px}
+html.touch #bgm input[type=range]{height:34px}
+html.touch .brand,html.touch .screen-mode,html.touch #msgcount{height:58px!important}
+html.touch #nav .btn{height:84px;font-size:34px;padding:0 44px}
+html.touch #dots button{width:30px;height:30px}
